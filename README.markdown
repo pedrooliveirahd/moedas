@@ -9,6 +9,7 @@ O Moedas é software livre e é distribuído sobre a licença [GPLv3](http://www
 Requisitos
 ----------
 Para rodar o Moedas você vai precisar de:
+
  - Um servidor WEB rodando PHP (Recomendo o Apache);
  - Um sistema gerenciador de banco de dados suportado pelo _CodeIgniter_.
 
