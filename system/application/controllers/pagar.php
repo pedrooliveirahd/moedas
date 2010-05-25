@@ -8,7 +8,8 @@
  *
  * @author Evaldo Junior <junior@casoft.info>
  * @version 0.1
- * @package controllers
+ * @package moedas
+ * @subpackage controllers
  */
 
 class Pagar extends Controller {
@@ -27,6 +28,10 @@ class Pagar extends Controller {
         $data['titulo'] = 'Moedas :: Contas à pagar :: Lista';
         $data['atividade'] = 'Lista de contas à pagar (vencidas e vencendo)';
         $data['pagina'] = 'pagar/index';
+
+        $this->load->model('pagar_model');
+
+        $data['lista_contas'] = $this->pagar_model->pega_vencidas();
 
         $this->load->view('index', $data);
     }

@@ -12,7 +12,7 @@
 /**
  * Model Pagar
  */
-class Pagar extends Model {
+class Pagar_model extends Model {
 
     /**
      * ID da conta a pagar, este número é auto incrementado pelo sgbd
@@ -77,7 +77,7 @@ class Pagar extends Model {
     /**
      * Função construtora do Model (exigido pelo CodeIgniter)
      */
-    public function Pagar() {
+    public function Pagar_model() {
         parent::Model();
     }
 
@@ -86,10 +86,10 @@ class Pagar extends Model {
      */
     public function pega_vencidas() {
         $hoje = date('Y-m-d');
-        $this->db->where('vencimento <', $hoje);
+        $this->db->where('vencimento <=', $hoje);
         $this->db->where('liquidado !=', True);
 
-        $query = $this->db->get();
+        $query = $this->db->get('pagar');
 
         return $query->result();
     }

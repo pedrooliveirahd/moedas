@@ -12,13 +12,14 @@
 */
 
 body {
-    background-color: #a0bf01;
+    background-color: #FFF;
 }
 
 #corpo {
     width: 800px;
     margin: 0px auto;
     background-color: #FFF;
+    border: 1px solid #444;
 }
 
 #nome_topo h1 {
