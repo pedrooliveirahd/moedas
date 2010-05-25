@@ -1,0 +1,44 @@
+/* 
+    Document   : finan
+    Created on : May 20, 2010, 9:33:54 PM
+    Author     : junior
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+    background-color: #a0bf01;
+}
+
+#corpo {
+    width: 800px;
+    margin: 0px auto;
+    background-color: #FFF;
+}
+
+#nome_topo h1 {
+    text-align: right;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px 4px;
+}
+
+#menu {
+    background-color: #a0b401;
+    clear: both;
+}
+
+#conteudo {
+    clear : both;
+    padding: 0px 4px;
+}
+
+#rodape {
+    font-size: 80%;
+    text-align: center;
+}
