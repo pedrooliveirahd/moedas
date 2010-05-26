@@ -21,5 +21,18 @@
         <label>Valor
             <input id="valor" name="valor" type="text" />
         </label>
+        <label>Multa
+            <input id="multa" name="multa" type="text" />
+        </label>
+        <label>Desconto
+            <input id="desconto" name="desconto" type="text" />
+        </label>
+        <label>Vencimento
+            <input id="vencimento" name="vencimento" type="text" />
+        </label>
+        <label>Pagamento
+            <input id="pagamento" name="pagamento" type="text" />
+        </label>
+        <input type="submit" value="Cadastrar" />
     </fieldset>
 </form>

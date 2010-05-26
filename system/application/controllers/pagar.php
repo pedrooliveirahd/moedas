@@ -39,7 +39,11 @@ class Pagar extends Controller {
     /**
      * Função 'nova' que é utilizada para registrar uma nova conta a pagar
      */
-    public function nova() {
+    public function nova($funcao) {
+
+        if ($funcao == 'gravar') {
+            
+        }
 
         /*
          * Definindo dados para a view
