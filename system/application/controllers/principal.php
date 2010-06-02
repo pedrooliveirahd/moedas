@@ -9,9 +9,15 @@
  *
  * @author Evaldo Junior <junior@casoft.info>
  * @version 0.1
- * @package controllers
+ * @package moedas
+ * @subpackage controllers
  */
 
+/**
+ * Controller principal
+ *
+ * @property CI_Loader $load
+ */
 class Principal extends Controller {
 
     /**

@@ -11,6 +11,10 @@
 |	http://example.com/
 |
 */
+
+/**
+ * Modifique a URL abaixo para o endereço onde o Moedas está instalado
+ */
 $config['base_url']	= "http://moedas/";
 
 /*

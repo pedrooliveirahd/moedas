@@ -12,14 +12,14 @@
 */
 
 body {
-    background-color: #FFF;
+    background-color: #EEE;
+    font-family: serif;
 }
 
 #corpo {
     width: 800px;
     margin: 0px auto;
     background-color: #FFF;
-    border: 1px solid #444;
 }
 
 #nome_topo h1 {
@@ -30,13 +30,45 @@ body {
 }
 
 #menu {
-    background-color: #a0b401;
+    background-color: #AAA;
+    color: #222;
+    text-shadow: 0.08em 0.08em #EEE;
     clear: both;
 }
 
 #conteudo {
     clear : both;
     padding: 0px 4px;
+    padding-bottom: 4px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.lista_contas {
+    width: 100%;
+    background-color: #DDD;
+    border-collapse: collapse;
+    cursor: default;
+}
+
+.lista_contas thead {
+    background-color: #BBB;
+    text-shadow: 0.08em 0.08em #EEE;
+    color: #222;
+}
+
+.lista_contas tbody tr:hover {
+    background-color: #EEE;
+}
+
+.coluna_valor, .coluna_acoes {
+    text-align: right;
+}
+
+.coluna_data {
+    text-align: center;
 }
 
 #rodape {

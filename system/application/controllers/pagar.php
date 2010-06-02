@@ -12,6 +12,12 @@
  * @subpackage controllers
  */
 
+/**
+ * Controller Pagar, gerencia as contas à pagar
+ *
+ * @property CI_Loader      $load
+ * @property Pagar_model    $pagar_model
+ */
 class Pagar extends Controller {
 
     /**
