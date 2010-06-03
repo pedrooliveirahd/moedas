@@ -6,7 +6,8 @@
  *
  * @author Evaldo Junior <junior@casoft.info>
  * @version 0.1
- * @package models
+ * @package moedas
+ * @subpackage models
  */
 
 /**
