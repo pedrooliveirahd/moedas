@@ -16,6 +16,10 @@ body {
     font-family: serif;
 }
 
+.botoes_opcao {
+    float: right;
+}
+
 #corpo {
     width: 800px;
     margin: 0px auto;
@@ -63,12 +67,36 @@ h1 {
     background-color: #EEE;
 }
 
+.verde {
+    font-weight: bold;
+    color: #090;
+}
+
+.vermelho {
+    font-weight: bold;
+    color: #900;
+}
+
 .coluna_valor, .coluna_acoes {
     text-align: right;
 }
 
 .coluna_data {
     text-align: center;
+}
+
+/* opções para os forms */
+form input[type=text] {
+    width: 100%;
+    border: 1px solid #BBB;
+}
+
+form table {
+    width: 100%;
+}
+
+.limpa {
+    clear: both;
 }
 
 #rodape {

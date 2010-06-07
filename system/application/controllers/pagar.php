@@ -16,6 +16,7 @@
  * Controller Pagar, gerencia as contas à pagar
  *
  * @property CI_Loader      $load
+ * @property CI_Input       $input
  * @property Pagar_model    $pagar_model
  */
 class Pagar extends Controller {
@@ -43,14 +44,12 @@ class Pagar extends Controller {
     }
 
     /**
-     * Função 'nova' que é utilizada para registrar uma nova conta a pagar
+     * Função 'nova' que é utilizada para exibir o formulário de registro de uma
+     * nova conta à pagar
+     *
+     * @access public
      */
-    public function nova($funcao) {
-
-        if ($funcao == 'gravar') {
-            
-        }
-
+    public function nova() {
         /*
          * Definindo dados para a view
          */
@@ -61,6 +60,17 @@ class Pagar extends Controller {
         $data['pagina'] = 'pagar/nova';
 
         $this->load->view('index', $data);
+    }
+
+    /**
+     * Função para gravar/atualizar uma conta à pagar
+     */
+    public function gravar() {
+        if ($this->input->post('id_pagar') != '') {
+            $this->load->model('pagar_model');
+            $this->pagar_model->grava();
+        }
+        redirect(site_url().'pagar');
     }
 
 }

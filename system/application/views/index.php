@@ -29,9 +29,9 @@
             </div>
             <div id="menu">
                 <ul class="sf-menu">
-                    <li><?php echo anchor($uri = '/', $title = 'Página inicial', $attributes = array('title' => 'Ir para a página inicial.', 'id' => 'menu_principal')); ?></li>
-                    <li><?php echo anchor($uri = '/receber/', $title = 'Receber', $attributes = array('title' => 'Página de contas à receber.', 'id' => 'menu_receber')); ?></li>
-                    <li><?php echo anchor($uri = '/pagar', $title = 'Pagar', $attributes = array('title' => 'Página de contas à pagar.', 'id' => 'menu_pagar')); ?></li>
+                    <li><?php echo anchor($uri = site_url(), $title = 'Página inicial', $attributes = array('title' => 'Ir para a página inicial.', 'id' => 'menu_principal')); ?></li>
+                    <li><?php echo anchor($uri = site_url().'receber/', $title = 'Receber', $attributes = array('title' => 'Página de contas à receber.', 'id' => 'menu_receber')); ?></li>
+                    <li><?php echo anchor($uri = site_url().'pagar', $title = 'Pagar', $attributes = array('title' => 'Página de contas à pagar.', 'id' => 'menu_pagar')); ?></li>
                 </ul>
                 <div style="clear: both"></div>
             </div><!-- menu -->

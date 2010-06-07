@@ -22,6 +22,8 @@ class Principal extends Controller {
 
     /**
      * Função index que exibe a página principal.
+     *
+     * @access public
      */
     public function index() {
 

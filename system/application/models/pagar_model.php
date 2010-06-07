@@ -12,68 +12,11 @@
 
 /**
  * Model Pagar
+ *
+ * @property CI_Input               $input
+ * @property CI_DB_active_record    $db
  */
 class Pagar_model extends Model {
-
-    /**
-     * ID da conta a pagar, este número é auto incrementado pelo sgbd
-     *
-     * @var integer
-     */
-    var $id = 0;
-
-    /**
-     * Diz se a conta a pagar foi liquidada
-     *
-     * @var boolean
-     */
-    var $liquidado = False;
-
-    /**
-     * A descrição da conta a pagar
-     *
-     * @var string
-     */
-    var $descricao = '';
-
-    /**
-     * O valor da conta a pagar
-     *
-     * @var float
-     */
-    var $valor = 0.0;
-
-    /**
-     * O valor da multa da conta a pagar
-     *
-     * @var float
-     */
-    var $multa = 0.0;
-
-    /**
-     * O valor do desconto da conta a pagar
-     *
-     * @var float
-     */
-    var $desconto = 0.0;
-
-    /**
-     * A data de vencimento da conta a pagar
-     *
-     * Formato: YYYY-MM-DD
-     *
-     * @var string
-     */
-    var $vencimento = '0000-00-00';
-
-    /**
-     * A data de pagamento da conta a pagar
-     *
-     * Formato: YYYY-MM-DD
-     *
-     * @var string
-     */
-    var $pagamento = '0000-00-00';
 
     /**
      * Função construtora do Model (exigido pelo CodeIgniter)
@@ -84,6 +27,8 @@ class Pagar_model extends Model {
 
     /**
      * Função que retornas as contas vencidas ou do dia
+     *
+     * @return array Array com os objetos das contas
      */
     public function pega_vencidas() {
         $hoje = date('Y-m-d');
@@ -93,6 +38,32 @@ class Pagar_model extends Model {
         $query = $this->db->get('pagar');
 
         return $query->result();
+    }
+
+    public function grava() {
+        // Helper para formatar as datas
+        $this->load->helper('datas');
+        $data = array(
+            'descricao'     => $this->input->post('descricao'),
+            'valor'         => $this->input->post('valor'),
+            'multa'         => $this->input->post('multa'),
+            'desconto'      => $this->input->post('desconto'),
+            'vencimento'    => brazil_to_date($this->input->post('vencimento'))
+        );
+        if ($this->input->post('pagamento') != '') {
+            $data['pagamento'] = brazil_to_date($this->input->post('pagamento'));
+        }
+        
+        if ($this->input->post('id_pagar') == '0') {
+            // Gravando uma nova conta
+            $this->db->insert('pagar', $data);
+        }
+        else {
+            // Atualizando uma conta existente
+            $this->db->where('id', $this->input->post('id_pagar'));
+            $this->db->update('pagar', $data);
+        }
+        return true;
     }
 
 }

@@ -11,9 +11,19 @@
  */
 
 $hoje = date('Y-m-d');
-$this->load->helper('datas');
+$this->load->helper(array('datas', 'moedas'));
 
 ?>
+<script type="text/javascript">
+    $(document).ready( function() {
+        $('#adicionar_conta_pagar').click(function() {
+            window.location = '<?php echo site_url(); ?>pagar/nova';
+        });
+    })
+</script>
+<div class="botoes_opcao">
+    <input type="button" id="adicionar_conta_pagar" value="Adicionar" />
+</div>
 <h1><?php echo $atividade; ?></h1>
 <table class="lista_contas">
     <thead>
@@ -30,8 +40,8 @@ $this->load->helper('datas');
             <tr>
                 <td><?php echo $conta->descricao; ?></td>
                 <td class="coluna_data"><?php echo date_to_brazil($conta->vencimento); ?></td>
-                <td><?php echo ($conta->vencimento == $hoje) ? 'Hoje' : 'Vencida'; ?></td>
-                <td class="coluna_valor"><?php echo $conta->valor; ?></td>
+                <td><?php echo ($conta->vencimento == $hoje) ? '<span class="verde">Hoje</span>' : '<span class="vermelho">Vencida</span>'; ?></td>
+                <td class="coluna_valor"><?php echo number_to_currency($conta->valor); ?></td>
                 <td class="coluna_acoes">Alterar | Baixar</td>
             <tr>
         <?php endforeach; ?>
