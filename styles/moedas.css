@@ -85,6 +85,24 @@ h1 {
     text-align: center;
 }
 
+a.alterar {
+    text-decoration: none;
+    color: #000;
+}
+
+a.alterar:hover {
+    color: #A8A800;
+}
+
+a.baixar {
+    text-decoration: none;
+    color: #000;
+}
+
+a.baixar:hover {
+    color: #090;
+}
+
 /* opções para os forms */
 form input[type=text] {
     width: 100%;

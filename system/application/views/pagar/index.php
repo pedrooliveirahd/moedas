@@ -42,7 +42,7 @@ $this->load->helper(array('datas', 'moedas'));
                 <td class="coluna_data"><?php echo date_to_brazil($conta->vencimento); ?></td>
                 <td><?php echo ($conta->vencimento == $hoje) ? '<span class="verde">Hoje</span>' : '<span class="vermelho">Vencida</span>'; ?></td>
                 <td class="coluna_valor"><?php echo number_to_currency($conta->valor); ?></td>
-                <td class="coluna_acoes">Alterar | Baixar</td>
+                <td class="coluna_acoes"><a class="alterar" href="<?php echo site_url().'pagar/alterar/'.$conta->id; ?>">Alterar</a> | <a class="baixar" href="<?php echo site_url().'pagar/baixar/'.$conta->id; ?>">Baixar</a></td>
             <tr>
         <?php endforeach; ?>
     </tbody>

@@ -32,7 +32,7 @@ class Principal extends Controller {
          */
         $data = array();
 
-        $data['titulo'] = 'Moedas :: Simplifique seu controle financeiro';
+        $data['titulo'] = 'Simplifique seu controle financeiro';
         $data['atividade'] = 'Página inicial';
         $data['pagina'] = 'principal/principal';
 

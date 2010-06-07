@@ -29,6 +29,7 @@ class Pagar_model extends Model {
      * Função que retornas as contas vencidas ou do dia
      *
      * @return array Array com os objetos das contas
+     * @access public
      */
     public function pega_vencidas() {
         $hoje = date('Y-m-d');
@@ -40,6 +41,25 @@ class Pagar_model extends Model {
         return $query->result();
     }
 
+    /**
+     * Função que retorna os dados de uma conta à pagar
+     *
+     * @param integer $id_conta ID da conta à pegar
+     * @return pagar
+     * @access public
+     */
+    public function pega_conta($id_conta) {
+        $query = $this->db->get_where('pagar', array('id' => $id_conta));
+        $conta =  $query->result();
+        return $conta[0];
+    }
+
+    /**
+     * Função que grava/atualiza os dados de uma conta à pagar
+     *
+     * @return boolean
+     * @access public
+     */
     public function grava() {
         // Helper para formatar as datas
         $this->load->helper('datas');
