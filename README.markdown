@@ -16,3 +16,9 @@ Para rodar o Moedas você vai precisar de:
 Powered By
 ----------
 O Moedas é desenvolvido utilizando o Framework [CodeIgniter](http://codeigniter.com/).
+
+Screenshot
+----------
+Veja o Moedas em ação:
+
+![Moedas em ação](http://dl.dropbox.com/u/6403691/moedas.png)
