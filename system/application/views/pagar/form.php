@@ -18,10 +18,23 @@ $this->load->helper('datas');
         $('#botao_cancelar').click( function() {
             window.location = '<?php echo site_url(); ?>pagar';
         });
+
+        $('#form_pagar').validate({
+            rules : {
+                descricao : {
+                    required : true,
+                    minlength : 5
+                },
+                valor : {
+                    required : true,
+                    number : true
+                }
+            }
+        });
     });
 </script>
 <h1><?php echo $atividade; ?></h1>
-<form action="<?php echo site_url(); ?>pagar/gravar" method="post" id="form_pagar">
+<form action="<?php echo site_url(); ?>pagar/gravar" method="post" id="form_pagar" >
     <div class="botoes_opcao">
         <input type="button" id="botao_cancelar" value="Cancelar" />
         <input type="submit" value="<?php echo (isset($conta->id)) ? 'Atualizar' : 'Cadastrar' ?>" />
