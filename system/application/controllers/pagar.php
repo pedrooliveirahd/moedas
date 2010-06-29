@@ -6,10 +6,10 @@
  *
  * O 'pagar' é o responsável pelas contas à pagar
  *
- * @author Evaldo Junior <junior@casoft.info>
- * @version 0.1
- * @package moedas
- * @subpackage controllers
+ * @author      Evaldo Junior <junior@casoft.info>
+ * @version     0.1
+ * @package     moedas
+ * @subpackage  controllers
  */
 
 /**
@@ -100,4 +100,5 @@ class Pagar extends Controller {
 
 }
 
-?>
+/* End of file pagar.php */
+/* Location: ./system/application/controllers/pagar.php */

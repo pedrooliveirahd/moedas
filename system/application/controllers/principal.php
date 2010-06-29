@@ -41,4 +41,5 @@ class Principal extends Controller {
     
 }
 
-?>
+/* End of file principal.php */
+/* Location: ./system/application/controllers/principal.php */

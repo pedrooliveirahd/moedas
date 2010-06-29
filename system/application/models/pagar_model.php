@@ -50,8 +50,7 @@ class Pagar_model extends Model {
      */
     public function pega_conta($id_conta) {
         $query = $this->db->get_where('pagar', array('id' => $id_conta));
-        $conta =  $query->result();
-        return $conta[0];
+        return $query->row();
     }
 
     /**
@@ -88,4 +87,5 @@ class Pagar_model extends Model {
 
 }
 
-?>
+/* End of file pagar_model.php */
+/* Location: ./system/application/controllers/pagar_model.php */

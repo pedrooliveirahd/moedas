@@ -20,6 +20,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript" src="<?php echo site_url(); ?>js/jquery.js"></script>
         <script type="text/javascript" src="<?php echo site_url(); ?>js/jquery.validate.js"></script>
+        <script type="text/javascript" src="<?php echo site_url(); ?>js/jquery.price_format.js"></script>
+        <script type="text/javascript" src="<?php echo site_url(); ?>js/jquery.maskedinput.js"></script>
         <link type="text/css" rel="stylesheet" href="<?php echo site_url(); ?>styles/moedas.css" media="all" />
         <link type="text/css" rel="stylesheet" href="<?php echo site_url(); ?>styles/superfish.css" media="all" />
     </head>

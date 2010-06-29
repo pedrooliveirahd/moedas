@@ -26,19 +26,34 @@ $this->load->helper('datas');
                     minlength : 5
                 },
                 valor : {
-                    required : true,
-                    number : true
+                    required : true
                 }
+            },
+            messages : {
+                descricao   : 'Descreva esta conta com, no mínimo, cinco caracteres',
+                valor       : 'Informe o valor da conta'
             }
         });
+
+        $('#valor, #multa, #desconto').priceFormat({
+            prefix              : '',
+            centsSeparator      : ',',
+            thousandsSeparator  : '.'
+        });
+
+        $('#botao_submit').click( function() {
+            $('#form_pagar').submit();
+        })
+
+        $('#vencimento, #pagamento').mask('99/99/9999');
     });
 </script>
+<div class="botoes_opcao">
+    <input type="button" id="botao_cancelar" value="Cancelar" />
+    <input type="button" id="botao_submit" value="<?php echo (isset($conta->id)) ? 'Atualizar' : 'Cadastrar' ?>" />
+</div>
 <h1><?php echo $atividade; ?></h1>
 <form action="<?php echo site_url(); ?>pagar/gravar" method="post" id="form_pagar" >
-    <div class="botoes_opcao">
-        <input type="button" id="botao_cancelar" value="Cancelar" />
-        <input type="submit" value="<?php echo (isset($conta->id)) ? 'Atualizar' : 'Cadastrar' ?>" />
-    </div>
     <div class="limpa"></div>
     <input type="hidden" name="id_pagar" value="<?php echo (isset($conta->id)) ? $conta->id : '0'; ?>" />
     <table>
