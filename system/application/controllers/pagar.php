@@ -86,6 +86,19 @@ class Pagar extends Controller {
     }
 
     /**
+     * Esta função baixa uma conta à pagar
+     *
+     * @param integer $id_conta ID da conta à baixar
+     */
+    public function baixar($id_conta) {
+        if ($id_conta != '') {
+            $this->load->model('pagar_model');
+            $this->pagar_model->baixa($id_conta);
+        }
+        redirect(site_url().'pagar');
+    }
+
+    /**
      * Função para gravar/atualizar uma conta à pagar
      *
      * @access public

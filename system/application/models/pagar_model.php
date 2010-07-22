@@ -54,6 +54,15 @@ class Pagar_model extends Model {
     }
 
     /**
+     * Função que baixa uma conta à pagar
+     *
+     * @param integer $id_conta ID da conta a baixar
+     */
+    public function baixa($id_conta) {
+        $this->db->update('pagar', array('liquidado' => '1'), array('id' => $id_conta));
+    }
+
+    /**
      * Função que grava/atualiza os dados de uma conta à pagar
      *
      * @return boolean
