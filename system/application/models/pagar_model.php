@@ -26,7 +26,7 @@ class Pagar_model extends Model {
     }
 
     /**
-     * Função que retornas as contas vencidas ou do dia
+     * Função que retorna as contas vencidas ou do dia
      *
      * @return array Array com os objetos das contas
      * @access public
@@ -39,6 +39,35 @@ class Pagar_model extends Model {
         $query = $this->db->get('pagar');
 
         return $query->result();
+    }
+
+    /**
+     * Função que retorna o número de contas vencidas
+     *
+     * @return array Array com os objetos das contas
+     * @access public
+     */
+    public function conta_vencidas() {
+        $hoje = date('Y-m-d');
+        $this->db->where('vencimento <=', $hoje);
+        $this->db->where('liquidado !=', True);
+
+        return $this->db->count_all_results('pagar');
+    }
+
+    /**
+     * Função que retornas o número de contas vencidas
+     *
+     * @return array Array com os objetos das contas
+     * @access public
+     */
+    public function conta_vencendo_amanha() {
+        $amanha = mktime(0, 0, 0, date("m"), date("d")+1, date("y"));
+        $data = date('Y-m-d', $amanha);
+        $this->db->where('vencimento', $data);
+        $this->db->where('liquidado !=', True);
+
+        return $this->db->count_all_results('pagar');
     }
 
     /**
@@ -71,15 +100,29 @@ class Pagar_model extends Model {
     public function grava() {
         // Helper para formatar as datas
         $this->load->helper('datas');
+
+        // Ajustando o valor a pagar, da multa e do desconto
+        $valor = strtr($this->input->post('valor'), '.', '');
+        $valor = strtr($valor, ',', '.');
+
+        $multa = strtr($this->input->post('multa'), '.', '');
+        $multa = strtr($multa, ',', '.');
+
+        $desconto = strtr($this->input->post('desconto'), '.', '');
+        $desconto = strtr($desconto, ',', '.');
+        
         $data = array(
             'descricao'     => $this->input->post('descricao'),
-            'valor'         => $this->input->post('valor'),
-            'multa'         => $this->input->post('multa'),
-            'desconto'      => $this->input->post('desconto'),
+            'valor'         => $valor,
+            'multa'         => $multa,
+            'desconto'      => $desconto,
             'vencimento'    => brazil_to_date($this->input->post('vencimento'))
         );
+        
         if ($this->input->post('pagamento') != '') {
+            // A conta está paga
             $data['pagamento'] = brazil_to_date($this->input->post('pagamento'));
+            $data['liquidado'] = '1';
         }
         
         if ($this->input->post('id_pagar') == '0') {

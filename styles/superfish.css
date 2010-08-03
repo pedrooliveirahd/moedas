@@ -62,13 +62,13 @@ ul.sf-menu li li li.sfHover ul {
 	color:			#222;
 }
 .sf-menu li {
-	background:		#AAA;
+	background:		#FFF;
 }
 .sf-menu li li {
-	background:		#AAA;
+	background:		#FFF;
 }
 .sf-menu li li li {
-	background:		#AAA;
+	background:		#FFF;
 }
 .sf-menu li:hover, .sf-menu li.sfHover,
 .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {

@@ -34,9 +34,8 @@ body {
 }
 
 #menu {
-    background-color: #AAA;
+    background-color: #FFF;
     color: #222;
-    text-shadow: 0.08em 0.08em #EEE;
     clear: both;
 }
 
@@ -49,6 +48,54 @@ body {
 h1 {
     font-size: 24px;
 }
+
+/* Página principal */
+#lembretes {
+    width: 500px;
+    margin: 10px auto;   
+}
+
+#lembretes h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.info_conta {
+    width: 180px;
+    border: 2px solid #333;
+    text-align: center;
+}
+
+.info_conta h2, .info_conta h3 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.info_conta h3 {
+    background-color: #EEE;
+}
+
+.info_conta span {
+    font-size: 40px;
+}
+
+#info_pagar {
+    float: left;
+}
+
+#info_pagar h2 {
+    background-color: #FFA0A0;
+}
+
+#info_receber {
+    float: right;
+}
+
+#info_receber h2 {
+    background-color: #A0FFA0;
+}
+
+
 
 .lista_contas {
     width: 100%;

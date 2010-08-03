@@ -16,7 +16,8 @@
 /**
  * Controller principal
  *
- * @property CI_Loader $load
+ * @property CI_Loader      $load
+ * @property Pagar_model    $pagar_model
  */
 class Principal extends Controller {
 
@@ -27,7 +28,7 @@ class Principal extends Controller {
      */
     public function index() {
 
-        /*
+        /**
          * Definindo dados para a view
          */
         $data = array();
@@ -35,6 +36,19 @@ class Principal extends Controller {
         $data['titulo'] = 'Simplifique seu controle financeiro';
         $data['atividade'] = 'Página inicial';
         $data['pagina'] = 'principal/principal';
+
+        /**
+         * Verificando se há contas à pagar
+         */
+        $this->load->model('pagar_model');
+        $data['total_vencidas_pagar']           = $this->pagar_model->conta_vencidas();
+        $data['total_vencendo_amanha_pagar']    = $this->pagar_model->conta_vencendo_amanha();
+
+        /**
+         * Verificando se há contas à receber
+         */
+        $data['total_vencidas_receber']  = 0;
+        $data['total_vencendo_amanha_receber']  = 0;
 
         $this->load->view('index', $data);
     }
