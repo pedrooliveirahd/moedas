@@ -1,8 +1,8 @@
 <?php
 /**
- * views/pagar/form.php
+ * views/receber/form.php
  *
- * Formulário para cadastrar uma nova conta a pagar
+ * Formulário para cadastrar uma nova conta a receber
  *
  * @author Evaldo Junior <junior@casoft.info>
  * @version 0.1
@@ -16,10 +16,10 @@ $this->load->helper('datas');
 <script type="text/javascript">
     $(document).ready( function() {
         $('#botao_cancelar').click( function() {
-            window.location = '<?php echo site_url(); ?>pagar';
+            window.location = '<?php echo site_url(); ?>receber';
         });
 
-        $('#form_pagar').validate({
+        $('#form_receber').validate({
             rules : {
                 descricao : {
                     required : true,
@@ -52,7 +52,7 @@ $this->load->helper('datas');
         });
 
         $('#botao_submit').click( function() {
-            $('#form_pagar').submit();
+            $('#form_receber').submit();
         })
 
         $('#vencimento, #pagamento').mask('99/99/9999');
@@ -63,8 +63,8 @@ $this->load->helper('datas');
     <input type="button" id="botao_submit" value="<?php echo $botao_submit; ?>" />
 </div>
 <h1><?php echo $atividade; ?></h1>
-<form action="<?php echo site_url(); ?>pagar/gravar" method="post" id="form_pagar" >
-    <input type="hidden" name="id_pagar" value="<?php echo (isset($conta->id)) ? $conta->id : '0'; ?>" />
+<form action="<?php echo site_url(); ?>receber/gravar" method="post" id="form_receber" >
+    <input type="hidden" name="id_receber" value="<?php echo (isset($conta->id)) ? $conta->id : '0'; ?>" />
     <table>
         <tr>
             <td colspan="3">

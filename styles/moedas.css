@@ -11,9 +11,14 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 
+@font-face {
+font-family: "playtime";
+src: url(fonts/playtime.ttf);
+}
+
 body {
     background-color: #EEE;
-    font-family: serif;
+    font-family: playtime;
 }
 
 .botoes_opcao {
@@ -24,6 +29,11 @@ body {
     width: 800px;
     margin: 0px auto;
     background-color: #FFF;
+}
+
+#altura {
+    height: 400px;
+    float: right;
 }
 
 #nome_topo h1 {
@@ -157,16 +167,23 @@ form input[type=text] {
     font-size: 24px;
     color: #555;
     font-weight: bold;
+    display: block;
+}
+
+form input.moeda {
+    text-align: right;
 }
 
 label.error {
     color: #F55;
     font-weight: bold;
+    font-size: 80%;
 }
 
 form label {
     color: #555;
     font-weight: bold;
+    font-size: 85%;
 }
 
 form table {

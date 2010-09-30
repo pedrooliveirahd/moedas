@@ -47,8 +47,9 @@ class Principal extends Controller {
         /**
          * Verificando se há contas à receber
          */
-        $data['total_vencidas_receber']  = 0;
-        $data['total_vencendo_amanha_receber']  = 0;
+        $this->load->model('receber_model');
+        $data['total_vencidas_receber']         = $this->receber_model->conta_vencidas();
+        $data['total_vencendo_amanha_receber']  = $this->receber_model->conta_vencendo_amanha();
 
         $this->load->view('index', $data);
     }

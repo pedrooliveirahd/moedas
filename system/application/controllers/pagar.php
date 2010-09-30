@@ -55,9 +55,10 @@ class Pagar extends Controller {
          */
         $data = array();
 
-        $data['titulo'] = 'Contas à pagar :: Nova';
-        $data['atividade'] = 'Cadastro de contas à pagar';
-        $data['pagina'] = 'pagar/form';
+        $data['titulo']         = 'Contas à pagar :: Nova';
+        $data['atividade']      = 'Cadastro de contas à pagar';
+        $data['botao_submit']   = 'Cadastrar';
+        $data['pagina']         = 'pagar/form';
 
         $this->load->view('index', $data);
     }
@@ -74,9 +75,10 @@ class Pagar extends Controller {
          */
         $data = array();
 
-        $data['titulo'] = 'Contas à pagar :: Nova';
-        $data['atividade'] = 'Alteração de contas à pagar';
-        $data['pagina'] = 'pagar/form';
+        $data['titulo']         = 'Contas à pagar :: Nova';
+        $data['atividade']      = 'Alteração de contas à pagar';
+        $data['botao_submit']   = 'Alterar';
+        $data['pagina']         = 'pagar/form';
 
         $this->load->model('pagar_model');
 
@@ -94,9 +96,10 @@ class Pagar extends Controller {
         if ($id_conta != '') {
             $data = array();
 
-            $data['titulo'] = 'Contas à pagar :: Nova';
-            $data['atividade'] = 'Baixar conta à pagar';
-            $data['pagina'] = 'pagar/form_baixar';
+            $data['titulo']         = 'Contas à pagar :: Nova';
+            $data['atividade']      = 'Baixar conta à pagar';
+            $data['botao_submit']   = 'Baixar';
+            $data['pagina']         = 'pagar/form';
             
             $this->load->model('pagar_model');
 

@@ -11,7 +11,6 @@
  * @subpackage views
  */
 ?>
-<?php $this->load->helper('url'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,7 +38,9 @@
                 <div style="clear: both"></div>
             </div><!-- menu -->
             <div id="conteudo">
+                <div id="altura"></div>
                 <?php $this->load->view($pagina); ?>
+                <div class="limpa"></div>
             </div><!-- conteudo -->
         </div>
         <div id="rodape">
