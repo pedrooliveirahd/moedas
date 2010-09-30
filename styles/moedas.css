@@ -29,6 +29,8 @@ body {
     width: 800px;
     margin: 0px auto;
     background-color: #FFF;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
 
 #altura {
@@ -62,7 +64,7 @@ h1 {
 /* Página principal */
 #lembretes {
     width: 500px;
-    margin: 10px auto;   
+    margin: 10px auto;
 }
 
 #lembretes h1 {
@@ -72,13 +74,15 @@ h1 {
 
 .info_conta {
     width: 180px;
-    border: 2px solid #333;
+
     text-align: center;
 }
 
 .info_conta h2, .info_conta h3 {
     margin: 0px;
     padding: 0px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .info_conta h3 {
