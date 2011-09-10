@@ -1,16 +1,33 @@
 #menu {
     padding: 0px 0px 0px 10px;
+    background-color: #FFF;
+    color: #222;
+    clear: both;
+}
+
+#menu h1 {
+    float: right;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px 0px;
 }
 
 #menu ul li {
     display: inline-block;
     margin: 3px 7px 3px 0px;
-    background-color: #DDD;
-    padding: 6px;
-    border-radius: 6px;
 }
 
 #menu ul li a {
     text-decoration: none;
+    display: block;
+    background-color: #999;
+    padding: 6px;
+    border-radius: 6px;
+    color: #FFF;
+}
+
+#menu ul li a:hover {
+    text-decoration: none;
+    background-color: #DDD;
     color: #000;
 }

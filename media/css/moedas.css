@@ -1,24 +1,29 @@
 /*
-    Document   : finan
+    Document   : finan.css
     Created on : May 20, 2010, 9:33:54 PM
-    Author     : junior
-    Description:
-        Purpose of the stylesheet follows.
-*/
-
-/*
-   TODO customize this sample style
-   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+    Author     : junior@casoft.info
 */
 
 @font-face {
-font-family: "playtime";
-src: url(fonts/playtime.ttf);
+    font-family: "playtime";
+    src: url(fonts/playtime.ttf);
 }
 
 body {
     background-color: #EEE;
     font-family: playtime;
+}
+
+.a-centro {
+    text-align: center;
+}
+
+.a-esquerda {
+    text-align: left;
+}
+
+.a-direita {
+    text-align: right;
 }
 
 .botoes_opcao {
@@ -29,8 +34,9 @@ body {
     width: 800px;
     margin: 10px auto;
     background-color: #FFF;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 #altura {
@@ -38,23 +44,9 @@ body {
     float: right;
 }
 
-#nome_topo h1 {
-    text-align: right;
-    font-size: 18px;
-    margin: 0px;
-    padding: 0px 4px;
-}
-
-#menu {
-    background-color: #FFF;
-    color: #222;
-    clear: both;
-}
-
 #conteudo {
     clear : both;
-    padding: 0px 4px;
-    padding-bottom: 4px;
+    padding: 10px 0px;
 }
 
 h1 {
@@ -74,7 +66,6 @@ h1 {
 
 .info_conta {
     width: 180px;
-
     text-align: center;
 }
 
@@ -124,6 +115,16 @@ h1 {
     color: #222;
 }
 
+.lista_contas thead th {
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.lista_contas tbody tr td {
+    padding: 5px;
+}
+
 .lista_contas tbody tr:hover {
     background-color: #EEE;
 }
@@ -136,14 +137,6 @@ h1 {
 .vermelho {
     font-weight: bold;
     color: #900;
-}
-
-.coluna_valor, .coluna_acoes {
-    text-align: right;
-}
-
-.coluna_data {
-    text-align: center;
 }
 
 a.alterar {
@@ -196,9 +189,4 @@ form table {
 
 .limpa {
     clear: both;
-}
-
-#rodape {
-    font-size: 80%;
-    text-align: center;
 }
