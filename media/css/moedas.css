@@ -1,4 +1,4 @@
-/* 
+/*
     Document   : finan
     Created on : May 20, 2010, 9:33:54 PM
     Author     : junior
@@ -6,7 +6,7 @@
         Purpose of the stylesheet follows.
 */
 
-/* 
+/*
    TODO customize this sample style
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
@@ -27,7 +27,7 @@ body {
 
 #corpo {
     width: 800px;
-    margin: 0px auto;
+    margin: 10px auto;
     background-color: #FFF;
     -moz-border-radius: 15px;
     border-radius: 15px;

@@ -1,29 +1,11 @@
-<?php
-/**
- * index.php
- *
- * Esta é a view principal, todas as outras são chamadas através desta, para
- * isso utiliza-se a variável $view.
- *
- * @author Evaldo Junior <junior@casoft.info>
- * @version 0.1
- * @package moedas
- * @subpackage views
- */
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php echo doctype('xhtml1-strict'); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title><?php echo $titulo; ?> (Moedas v<?php echo MOEDAS_VERSAO; ?>)</title>
+        <title><?php echo $titulo; ?> :: Moedas</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script type="text/javascript" src="<?php echo site_url(); ?>js/jquery.js"></script>
-        <script type="text/javascript" src="<?php echo site_url(); ?>js/jquery.validate.js"></script>
-        <script type="text/javascript" src="<?php echo site_url(); ?>js/jquery.price_format.js"></script>
-        <script type="text/javascript" src="<?php echo site_url(); ?>js/jquery.maskedinput.js"></script>
-        <link type="text/css" rel="stylesheet" href="<?php echo site_url(); ?>styles/moedas.css" media="all" />
-        <link type="text/css" rel="stylesheet" href="<?php echo site_url(); ?>styles/superfish.css" media="all" />
+        <link type="text/css" rel="stylesheet" href="<?php echo site_url(); ?>media/css/reset.css" media="all" />
+        <link type="text/css" rel="stylesheet" href="<?php echo site_url(); ?>media/css/moedas.css" media="all" />
+        <link type="text/css" rel="stylesheet" href="<?php echo site_url(); ?>media/css/menu.css" media="all" />
     </head>
     <body>
         <div id="corpo">
@@ -31,12 +13,13 @@
                 <h1><?php echo $titulo; ?></h1>
             </div>
             <div id="menu">
-                <ul class="sf-menu">
-                    <li><?php echo anchor($uri = site_url(), $title = 'Página inicial', $attributes = array('title' => 'Ir para a página inicial.', 'id' => 'menu_principal')); ?></li>
-                    <li><?php echo anchor($uri = site_url().'receber/', $title = 'Receber', $attributes = array('title' => 'Página de contas à receber.', 'id' => 'menu_receber')); ?></li>
-                    <li><?php echo anchor($uri = site_url().'pagar', $title = 'Pagar', $attributes = array('title' => 'Página de contas à pagar.', 'id' => 'menu_pagar')); ?></li>
-                </ul>
-                <div style="clear: both"></div>
+                <?php
+                    echo ul(array(
+                        anchor('/', 'Resumo'),
+                        anchor('/receber/', 'Contas à receber'),
+                        anchor('/pagar/', 'Contas à pagar')
+                    ));
+                ?>
             </div><!-- menu -->
             <div id="conteudo">
                 <div id="altura"></div>
@@ -50,4 +33,8 @@
             Powered By PHP and CodeIgniter</p>
         </div>
     </body>
+    <script type="text/javascript" src="<?php echo site_url(); ?>media/js/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo site_url(); ?>media/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="<?php echo site_url(); ?>media/js/jquery.price_format.js"></script>
+    <script type="text/javascript" src="<?php echo site_url(); ?>media/js/jquery.maskedinput.js"></script>
 </html>
