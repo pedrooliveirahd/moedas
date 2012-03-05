@@ -4,14 +4,9 @@
     Author     : junior@casoft.info
 */
 
-@font-face {
-    font-family: "playtime";
-    src: url(fonts/playtime.ttf);
-}
-
 body {
     background-color: #EEE;
-    font-family: playtime;
+    font-family: "Liberation Sans", "Arial";
 }
 
 .a-centro {

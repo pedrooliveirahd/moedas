@@ -14,13 +14,6 @@ $hoje = date('Y-m-d');
 $this->load->helper(array('datas', 'moedas'));
 
 ?>
-<script type="text/javascript">
-    $(document).ready( function() {
-        $('#adicionar_conta_pagar').click(function() {
-            window.location = '<?php echo site_url(); ?>pagar/nova';
-        });
-    })
-</script>
 <div class="botoes_opcao">
     <input type="button" id="adicionar_conta_pagar" value="Adicionar" />
 </div>

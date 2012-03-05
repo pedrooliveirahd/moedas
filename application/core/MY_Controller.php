@@ -23,6 +23,20 @@ class MY_Controller extends CI_Controller {
      */
     public function  __construct() {
         parent::__construct();
+
+        /**
+         * $data
+         *
+         * Array con informações para as views
+         */
+        $this->data = array();
+
+        /**
+         * Array com javascripts que serão carregados nas views 
+         */
+        $this->data['javascripts'] = array(
+            'base'
+        );
     }
 }
 

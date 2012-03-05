@@ -13,51 +13,6 @@
 $this->load->helper('datas');
 
 ?>
-<script type="text/javascript">
-    $(document).ready( function() {
-        $('#botao_cancelar').click( function() {
-            window.location = '<?php echo site_url(); ?>pagar';
-        });
-
-        $('#form_pagar').validate({
-            rules : {
-                descricao : {
-                    required : true,
-                    minlength : 5
-                },
-                vencimento : {
-                    required : true
-                },
-                <?php if ($botao_submit == 'Baixar') : ?>
-                    pagamento : {
-                        required : true
-                    },
-                <?php endif; ?>
-                valor : {
-                    required : true
-                }
-            },
-            messages : {
-                descricao   : 'Descreva esta conta com, no mínimo, cinco caracteres',
-                vencimento  : 'Informe a data de vencimento do título',
-                pagamento   : 'Informe a data de pagamento do título',
-                valor       : 'Informe o valor da conta'
-            }
-        });
-
-        $('#valor, #multa, #desconto').priceFormat({
-            prefix              : '',
-            centsSeparator      : ',',
-            thousandsSeparator  : '.'
-        });
-
-        $('#botao_submit').click( function() {
-            $('#form_pagar').submit();
-        })
-
-        $('#vencimento, #pagamento').mask('99/99/9999');
-    });
-</script>
 <div class="botoes_opcao">
     <input type="button" id="botao_cancelar" value="Cancelar" />
     <input type="button" id="botao_submit" value="<?php echo $botao_submit; ?>" />

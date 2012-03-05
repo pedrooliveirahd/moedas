@@ -21,26 +21,28 @@
  */
 class Pagar extends MY_Controller {
 
+    public function __construct() {
+        parent::__construct();
+
+        $this->data['javascripts'] = array_merge($this->data['javascripts'], array(
+            'pagar/geral'
+        ));
+    }
+
     /**
      * Função index que exibe a página principal das contas a pagar,
      * nesta página são listadas as contas vencidas e vencendo hoje.
      */
     public function index() {
-
-        /*
-         * Definindo dados para a view
-         */
-        $data = array();
-
-        $data['titulo'] = 'Contas à pagar :: Lista';
-        $data['atividade'] = 'Lista de contas à pagar (vencidas e vencendo)';
-        $data['pagina'] = 'pagar/index';
-
         $this->load->model('pagar_model');
 
-        $data['lista_contas'] = $this->pagar_model->pega_vencidas();
+        $this->data['titulo']       = 'Contas à pagar :: Lista';
+        $this->data['atividade']    = 'Lista de contas à pagar (vencidas e vencendo)';
+        $this->data['pagina']       = 'pagar/index';
 
-        $this->load->view('index', $data);
+        $this->data['lista_contas'] = $this->pagar_model->pega_vencidas();
+
+        $this->load->view('index', $this->data);
     }
 
     /**
@@ -50,17 +52,17 @@ class Pagar extends MY_Controller {
      * @access public
      */
     public function nova() {
-        /*
-         * Definindo dados para a view
-         */
-        $data = array();
+        $this->data['titulo']       = 'Contas à pagar :: Nova';
+        $this->data['atividade']    = 'Cadastro de contas à pagar';
+        $this->data['botao_submit'] = 'Cadastrar';
 
-        $data['titulo']         = 'Contas à pagar :: Nova';
-        $data['atividade']      = 'Cadastro de contas à pagar';
-        $data['botao_submit']   = 'Cadastrar';
-        $data['pagina']         = 'pagar/form';
+        $this->data['pagina']       = 'pagar/form';
 
-        $this->load->view('index', $data);
+        $this->data['javascripts'] = array_merge($this->data['javascripts'], array(
+            'pagar/form'
+        ));
+
+        $this->load->view('index', $this->data);
     }
 
     /**
@@ -73,18 +75,18 @@ class Pagar extends MY_Controller {
         /*
          * Definindo dados para a view
          */
-        $data = array();
+        $this->data = array();
 
-        $data['titulo']         = 'Contas à pagar :: Nova';
-        $data['atividade']      = 'Alteração de contas à pagar';
-        $data['botao_submit']   = 'Alterar';
-        $data['pagina']         = 'pagar/form';
+        $this->data['titulo']       = 'Contas à pagar :: Nova';
+        $this->data['atividade']    = 'Alteração de contas à pagar';
+        $this->data['botao_submit'] = 'Alterar';
+        $this->data['pagina']       = 'pagar/form';
 
         $this->load->model('pagar_model');
 
-        $data['conta'] = $this->pagar_model->pega_conta($id_conta);
+        $this->data['conta'] = $this->pagar_model->pega_conta($id_conta);
 
-        $this->load->view('index', $data);
+        $this->load->view('index', $this->data);
     }
 
     /**
@@ -94,18 +96,18 @@ class Pagar extends MY_Controller {
      */
     public function baixar($id_conta) {
         if ($id_conta != '') {
-            $data = array();
+            $this->data = array();
 
-            $data['titulo']         = 'Contas à pagar :: Nova';
-            $data['atividade']      = 'Baixar conta à pagar';
-            $data['botao_submit']   = 'Baixar';
-            $data['pagina']         = 'pagar/form';
+            $this->data['titulo']         = 'Contas à pagar :: Nova';
+            $this->data['atividade']      = 'Baixar conta à pagar';
+            $this->data['botao_submit']   = 'Baixar';
+            $this->data['pagina']         = 'pagar/form';
 
             $this->load->model('pagar_model');
 
-            $data['conta'] = $this->pagar_model->pega_conta($id_conta);
+            $this->data['conta'] = $this->pagar_model->pega_conta($id_conta);
 
-            $this->load->view('index', $data);
+            $this->load->view('index', $this->data);
         }
         else {
             redirect(site_url().'pagar');
