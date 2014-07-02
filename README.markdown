@@ -21,4 +21,4 @@ Screenshot
 ----------
 Veja o Moedas em ação:
 
-![Moedas em ação](http://dl.dropbox.com/u/6403691/moedas.png)
+![Moedas em ação](docs/screenshots/moedas.png)
