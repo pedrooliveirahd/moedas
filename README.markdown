@@ -1,5 +1,9 @@
+Abandonado
+==========
+Atenção, este aplicativo est abandonado e não receberá mais atualizações.
+
 Moedas
-======
+------
 Moedas é um sistema de controle de contas à pagar e receber, ele pode ser usado tanto pessoalmente quanto para micro empresas.
 
 Licença
