@@ -1,6 +1,6 @@
 Abandonado
 ==========
-Atenção, este aplicativo est abandonado e não receberá mais atualizações.
+Atenção, este aplicativo está abandonado e não receberá mais atualizações.
 
 Moedas
 ------
